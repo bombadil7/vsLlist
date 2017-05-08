@@ -49,3 +49,44 @@ int deleteLinkedList(node *&head) {
 	}
 	return numNodesDeleted;
 }
+
+int insertFirst(node *&head, int num) {
+	node *newNode = new (node);
+	newNode->num = num;
+	// Check if list is emty - then we just create one node 
+	// and point head to it
+	if (!head) {
+		head = newNode;
+		head->next = NULL;
+		return 1;
+	}
+
+	// Otherwise shift everthing and insert 
+	newNode->next = head;
+	head = newNode;
+	return 2;
+}
+
+int insertLast(node *&head, int num) {
+	node *newNode = new (node);
+	newNode->num = num;
+	newNode->next = NULL;
+	int position = 0;
+
+	// Is list empty?
+	if (!head) {
+		head = newNode;
+		return position;
+	}
+
+	// Otherwise trace to the end
+	node *currentNode = head, *nextNode = head->next;
+	++position;
+	while (nextNode != NULL) {
+		currentNode = nextNode;
+		nextNode = nextNode->next;
+		++position;
+	}
+	currentNode->next = newNode;
+	return position;
+}

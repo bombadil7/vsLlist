@@ -3,7 +3,8 @@
 int main(void) {
 	char inBuffer[50];
 	cout << "Creating the list\n";
-
+	node *head = NULL;
+/*
 	// Create the list -----------------------
 	node *head = NULL, *next = NULL, *current = NULL;
 
@@ -20,6 +21,20 @@ int main(void) {
 		cout << "Printed " << num << " nodes\n";
 	else
 		cout << "Error: The linked list cannot be empty\n";
+*/
+
+	int p;
+	p = insertLast(head, 3);
+	cout << "Inserted at position " << p << endl;
+	p = insertLast(head, 4);
+	cout << "Inserted at position " << p << endl;
+	p = insertLast(head, 5);
+	cout << "Inserted at position " << p << endl;
+	p = insertLast(head, 6);
+	cout << "Inserted at position " << p << endl;
+	p = insertLast(head, 7);
+	cout << "Inserted at position " << p << endl;
+	printLinkedList(head);
 
 	// Delete the list -----------------------
 	if (int num = deleteLinkedList(head)) {

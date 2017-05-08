@@ -15,3 +15,6 @@ int createLinkedList(node *&head, int numNodes);
 
 // Returns number of nodes deleted 
 int deleteLinkedList(node *&head);
+
+int insertFirst(node *&head, int num);
+int insertLast(node *&head, int num);
